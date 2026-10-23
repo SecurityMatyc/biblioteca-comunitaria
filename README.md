@@ -1,103 +1,106 @@
-# Biblioteca Comunitaria MJV 📚
+# Biblioteca Comunitaria MJV
 
-Proyecto académico desarrollado durante 2025 para la **Evaluación 4 de Ingeniería de Software**.
+Sistema web académico para la gestión de libros, usuarios, préstamos, devoluciones y multas dentro de una biblioteca comunitaria.
 
-Este sistema representa una biblioteca comunitaria ficticia orientada a la gestión de libros, usuarios y préstamos, con enfoque en una experiencia web funcional para lector, bibliotecario y administrador.
+Proyecto desarrollado durante **2025** para la **Evaluación 4 de Ingeniería de Software**.
 
-Actualmente, el proyecto se encuentra **completamente funcional**, incluyendo inicio, servicios, contacto, inicio de sesión y registro de cuentas.
+El sistema incluye funcionalidades para lectores, bibliotecarios y administradores, además de una interfaz web responsive con autenticación y gestión de cuentas.
 
-## 👥 Autores
+## Autores
 
-- Matias Gajardo
+- Matías Gajardo
 - Jean Pierre Avastia
-- Valentina Roldan
+- Valentina Roldán
 
-Trabajo realizado en conjunto como parte del proceso formativo en desarrollo de software.
+Proyecto realizado en equipo como parte del proceso formativo en desarrollo de software.
 
-## 🧩 Descripción del proyecto
+## Descripción del proyecto
 
-La aplicación permite administrar los procesos principales de una biblioteca comunitaria moderna:
+La aplicación permite administrar los procesos principales de una biblioteca comunitaria:
 
 - Registro y gestión de usuarios con roles.
 - Catálogo de libros con control de disponibilidad.
 - Registro de préstamos con validaciones de negocio.
 - Registro de devoluciones y cálculo automático de multas.
 - Paneles diferenciados para lector, bibliotecario y administrador.
+- Inicio público con información de servicios y contacto.
+- Inicio de sesión y registro de cuentas.
 
-Además de la parte de gestión, el proyecto incorpora una interfaz web responsive con un template visual cuidado, donde quedaron funcionales:
+## Características principales
 
-- Inicio público con secciones informativas.
-- Sección de servicios.
-- Sección de contacto.
-- Inicio de sesión.
-- Registro de cuenta.
-
-## ✨ Características principales
-
-- CRUD de libros para perfil bibliotecario.
-- Control estricto de disponibilidad para evitar prestamos duplicados.
-- Multas automáticas por atraso (`$1000` por día).
-- Consultas por búsqueda en catálogo y vistas de disponibilidad.
-- Gestión administrativa de usuarios: activar/desactivar, cambio de rol y creación de bibliotecarios.
-- Validaciones robustas en registro: RUT chileno, teléfono y fortaleza de contraseña.
+- CRUD de libros para el perfil bibliotecario.
+- Control de disponibilidad para evitar préstamos duplicados.
+- Cálculo automático de multas por atraso: `$1000` por día.
+- Búsqueda en el catálogo y consulta de disponibilidad.
+- Gestión administrativa de usuarios, roles y bibliotecarios.
+- Validación de RUT chileno, teléfono y fortaleza de contraseña.
 - Dashboard con métricas de libros, préstamos y multas.
 
-## 🛠️ Stack tecnológico
+## Tecnologías
 
 - Python 3.13
 - Django 5.2.8
-- Django REST Framework (instalado en el proyecto)
-- HTML, CSS, JavaScript
+- Django REST Framework instalado en el proyecto
+- HTML, CSS y JavaScript
 - Bootstrap 5
-- SQLite (base de datos por defecto)
+- SQLite
 
-## 🗂️ Modulos del sistema
+## Módulos del sistema
 
 - `cuentas`: autenticación, registro, perfiles y control de roles.
-- `gestion`: catálogo de libros, préstamos, devoluciones, disponibilidad y reportes.
+- `gestion`: catálogo, préstamos, devoluciones, disponibilidad y reportes.
 - `biblioteca`: configuración principal del proyecto Django.
 
-## 🚀 Puesta en marcha local
+## Puesta en marcha local
 
-1. Clonar el repositorio.
-2. Entrar a la carpeta del proyecto.
-3. Crear y activar entorno virtual.
-4. Instalar dependencias.
-5. Aplicar migraciones.
-6. Iniciar servidor.
+### 1. Clonar el repositorio
 
-Comandos sugeridos en Windows PowerShell:
+```powershell
+git clone <url-del-repositorio>
+cd <nombre-del-repositorio>
+```
+
+### 2. Crear y activar el entorno virtual
 
 ```powershell
 python -m venv env
 .\env\Scripts\Activate.ps1
+```
+
+### 3. Instalar dependencias
+
+```powershell
 pip install -r requirements.txt
+```
+
+### 4. Aplicar migraciones
+
+```powershell
 python manage.py migrate
+```
+
+### 5. Iniciar el servidor
+
+```powershell
 python manage.py runserver
 ```
 
-Abrir en navegador:
+## Rutas principales
 
-- `http://127.0.0.1:8000/` (sitio principal)
-- `http://127.0.0.1:8000/admin/` (panel Django Admin)
-- `http://127.0.0.1:8000/login/` (autenticación)
+| Ruta | Descripción |
+|------|-------------|
+| `http://127.0.0.1:8000/` | Sitio principal |
+| `http://127.0.0.1:8000/admin/` | Panel de administración Django |
+| `http://127.0.0.1:8000/login/` | Autenticación |
 
-## ☁️ Despliegue
+## Despliegue
 
-Esta versión del proyecto **no fue desplegada en AWS**.
-El foco principal fue consolidar una entrega académica final, funcional y completa.
+Esta versión no fue desplegada en AWS. El objetivo principal fue consolidar una entrega académica funcional con reglas de negocio, validaciones, roles e interfaz web.
 
-## 🎯 Contexto académico
+## Contexto académico
 
-Este repositorio conserva una entrega importante del curso para revisar decisiones de diseño, estructura y avances logrados durante la asignatura.
+El proyecto se desarrolló por etapas. Durante las primeras unidades se trabajó en la planificación y los mockups; posteriormente se presentó una versión base y, en la Evaluación 4, se consolidó la versión final con mejoras de interfaz, validaciones y flujo funcional.
 
-Proceso de trabajo considerado:
+## Alcance
 
-- En las primeras unidades, el trabajo fue mayoritariamente teórico.
-- Antes de codificar, se desarrollaron mockups y planificación paso a paso.
-- En la Evaluación 3 se presentó una versión base del sistema.
-- En esta Evaluación 4 se consolidó la versión final, con mejoras de interfaz, validaciones y flujo funcional completo.
-
-## 📌 Resumen
-
-Una base sólida en Django para gestión bibliotecaria, desarrollada en equipo, con enfoque práctico y buen nivel de cierre académico para servir como referencia en proyectos futuros.
+La aplicación representa una implementación académica funcional de alcance intermedio. Su principal valor técnico está en la aplicación de reglas de negocio, control de disponibilidad, cálculo de multas, validaciones de datos y gestión de permisos por rol.
